@@ -1,35 +1,28 @@
 #include <stdio.h>
 
 /**
- *  * main- Entry point
- *   * @void: Null value
- *    *
- *     * Description: Print numbers from 00 to 99
- *      * Return: Zero value
- *       */
-
+ * main - prints all possible different combinations of two digits
+ * Return: ALways 0 (Success)
+ */
 int main(void)
 {
-	int i = 0;
-	int j;
-	int count = 0;
+	int n, m;
 
-	while (i <= 8)
+	for (n = 48; n <= 56; n++)
 	{
-		j = i + 1;
-		while (j <= 9)
+		for (m = 49; m <= 57; m++)
 		{
-			putchar(i + '0');
-			putchar(j + '0');
-			if (count != 44)
+			if (m > n)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			j++;
-			count++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
