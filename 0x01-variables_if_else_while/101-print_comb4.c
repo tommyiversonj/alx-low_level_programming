@@ -1,45 +1,49 @@
 #include <stdio.h>
-
 /**
- *  * main- Entry point
- *   * @void: Null value
- *    *
- *     * Description: Print numbers from 00 to 99
- *      * Return: Zero value
- *       */
-
+ * main - Entry point
+ *
+ * Return: Always 0 (Success/correct)
+ */
 int main(void)
+
 {
-	int i = 0;
-	int j, k;
-	int count = 0;
+int left;
+int right;
+int center;
 
-	while (i <= 7)
-	{
-		j = i + 1;
-		while (j <= 8)
-		{
-			k = j + 1;
-			while (k <= 9)
-			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(k + '0');
-				if (count != 119)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				k++;
-				count++;
 
-			}
-			j++;
 
-		}
-		i++;
+for (left = 48; left <= 57; left++)
+{
+for (center = left + 1; center <= 57; center++)
+{
+for (right = center + 1 ; right <= 57; right++)
 
-	}
+
+{
+putchar(left);
+putchar (center);
+putchar (right);
+
+if  ((left == 55) && (center == left + 1) && (right == center + 1))
+{
+break;
+}
+
+putchar(',');
+putchar (' ');
+
+}
+
+}
+
+}
+
+putchar('\n');
+
+return (0);
+
+}
 	putchar('\n');
 	return (0);
 }
