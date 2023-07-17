@@ -1,38 +1,32 @@
 #include <stdio.h>
 
 /**
- *  * main- Entry point
- *   * @void: Null value
- *    *
- *     * Description: Print numbers from 00 to 99
- *      * Return: Zero value
- *       */
-
+ * main - prints all possible different combinations of three digits
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int i = 0;
-	int j;
-	int count = 0;
+	int n, m, l;
 
-	while (i <= 98)
+	for (n = 48; n < 58; n++)
 	{
-		j = i + 1;
-		while (j <= 99)
+		for (m = 49; m < 58; m++)
 		{
-			putchar((i / 10) + '0');
-			putchar((i % 10) + '0');
-			putchar(' ');
-			putchar((j / 10) + '0');
-			putchar((j % 10) + '0');
-			if (count != 4949)
+			for (l = 50; l < 58; l++)
 			{
-				putchar(',');
-				putchar(' ');
+				if (l > m && m > n)
+				{
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
-			j++;
-			count++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
