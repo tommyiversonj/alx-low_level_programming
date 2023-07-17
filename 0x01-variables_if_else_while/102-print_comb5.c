@@ -6,7 +6,7 @@
  * Return (0)
  */
 
-int main(void)
+int main(void) /* This is a function of the program */
 {
 	int i, j, k;
 
