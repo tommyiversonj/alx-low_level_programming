@@ -1,33 +1,38 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * main - main - two pairs of numbers that do not repeat
- *
- * Return (0)
+ * main - Entry Point
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
 
 int main(void)
 {
-	int i, j;
+	int firstDigit = 0, seconDigit;
 
-	for (j = 0; j <= 99; j++)
+	while (firstDigit <= 99)
 	{
-		for (i = j; i <= 99; i++)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			if (i != j)
+			if (seconDigit != firstDigit)
 			{
-				putchar(j / 10 + 48);
-				putchar(j % 10 + 48);
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
 				putchar(' ');
-				putchar(i / 10 + 48);
-				putchar(i % 10 + 48);
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			if (j * 100 + i != 9899)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			++seconDigit;
 		}
+		++firstDigit;
 	}
 	putchar('\n');
 
