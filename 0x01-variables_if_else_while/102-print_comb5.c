@@ -1,42 +1,35 @@
 #include <stdio.h>
 
 /**
- * main - possible combos of 3 digits
+ * main - main - two pairs of numbers that do not repeat
  *
  * Return (0)
  */
 
-int main(void) /* This is a function of the program */
+int main(void)
 {
-	int i, j, k;
+	int i, j;
 
-	for (i = 48; i < 58; i++)
+	for (j = 0; j <= 99; j++)
 	{
-		for (j = 48; j < 58; j++)
+		for (i = j; i <= 99; i++)
 		{
-			for (k = 48; k < 58; k++)
+			if (i != j)
 			{
-				if (i == j || j == k || i == k)
-				{
-					continue;
-				}
-				putchar(i);
-				putchar(j);
-				putchar(k);
-
-				if (i == 55 && j == 56 && k == 57)
-				{
-					break;
-
-				}
-				else
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				putchar(j / 10 + 48);
+				putchar(j % 10 + 48);
+				putchar(' ');
+				putchar(i / 10 + 48);
+				putchar(i % 10 + 48);
+			}
+			if (j * 100 + i != 9899)
+			{
+				putchar(',');
+				putchar(' ');
 			}
 		}
-		putchar('\n');
-		return (0);
 	}
+	putchar('\n');
+
+	return (0);
 }
