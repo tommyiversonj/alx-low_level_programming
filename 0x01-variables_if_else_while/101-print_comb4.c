@@ -1,33 +1,49 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * main - prints all possible combinations of two two-digit numbers
+ * main - Entry point
+ *
+ * Description: print all possible different
+ *            combinations of two digits.
+ *
  * Return: Always 0 (Success)
- */
+*/
+
 int main(void)
 {
-	int i, j;
+	int digit1 = 0;
+	int digit2, digit3;
 
-	for (i = 0; i < 100; i++)
+	while (digit1 <= 9)
 	{
-		for (j = 0; j < 100; j++)
+		digit2 = 0;
+		while (digit2 <= 9)
 		{
-			if (i < j)
+			digit3 = 0;
+			while (digit3 <= 9)
 			{
-				putchar((i / 10) + 48);
-				putchar((i % 10) + 48);
-				putchar(' ');
-				putchar((j / 10) + 48);
-				putchar((j % 10) + 48);
-				if (i != 98 || j != 99)
+				if (digit1 != digit2 &&
+				    digit1 < digit2 &&
+				    digit2 != digit3 &&
+				    digit2 < digit3)
 				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
+					putchar(digit1 + 48);
+					putchar(digit2 + 48);
+					putchar(digit3 + 48);
 
+					if (digit1 + digit2 + digit3 != 24)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+				++digit3;
+			}
+			++digit2;
 		}
+		++digit1;
 	}
 	putchar('\n');
+
 	return (0);
 }
