@@ -1,25 +1,15 @@
-#include "main.h"
+#include "../main.h"
 
 /**
- * _isupper - check for uppercase character.
+ * main - check the code for ALX School students
  *
- * @c: character
- *
- * Return: 1 if c is uppercase and 0 otherwise.
- *
- */
+ * Return: Always 0 (Success)
+*/
 
-int _isupper(int c)
-
+int main(void)
 {
-
-  if (c <= 'Z' && c >= 'A')
-
-    {
-
-      return (1);
-
-    }
-
-  return (0);
+	print_square(2);
+	print_square(10);
+	print_square(0);
+	return (0);
 }
