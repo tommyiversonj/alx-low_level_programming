@@ -1,15 +1,17 @@
 #include "main.h"
 
 /**
- * main - check the code for ALX School students
+ * _isupper - uppercase letters
+ * @c: character to check
  *
- * Return: Always 0 (Success)
-*/
+ * Return: 0 or 1
+ */
+int _isupper(int c)
 
-int main(void)
 {
-	print_square(2);
-	print_square(10);
-	print_square(0);
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
+
 }
