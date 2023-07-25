@@ -1,49 +1,26 @@
 #include "main.h"
-
 /**
  * rev_string - reverses a string
+ * _putchar - print each character
+ * @s: char to check
  *
- * string_length: prints number of characters.
- * @s: store character
- * @: store character
- * Return: Always 0
+ * Description: This will reverse a string
+ * Return: 0 is success
  */
 void rev_string(char *s)
 {
-  int length, c;
-  char *begin, *end, temp;
+	int a = 0, b, c;
+	char d;
 
-  length = string_length(s);
-
-  begin = s;
-  end = s;
-
-  for (c = 0; c < (length - 1); c++)
-    end++;
-
-  for (c = 0; c < length / 2; c++)
-    {
-      temp = *end;
-      *end = *begin;
-      *begin = temp;
-
-      begin++;
-      end--;
-    }
-}
-
-/**
- * string_length - finds the length of a string.
- * Return: length of c.
- * @pointer: pointer.
- */
-int string_length(char *pointer)
-{
-  int c = 0;
-
-  while (*(pointer + c) != '\0')
-    {
-      c++;
-    }
-  return (c);
+	while (s[a] != '\0')
+	{
+		a++;
+	}
+	c = a - 1;
+	for (b = 0; c >= 0 && b < c; c--, b++)
+	{
+		d = s[b];
+		s[b] = s[c];
+		s[c] = d;
+	}
 }
