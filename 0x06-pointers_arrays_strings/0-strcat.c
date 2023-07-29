@@ -16,7 +16,7 @@ char *_strcat(char *dest, char *src) {
   dest += dest_len;
 
   /* Copy the src string to dest. */
-  for (int i = 0; i < src_len; i++) {
+  for(int i = 0; i < src_len; i++) {
     *dest++ = *src++;
   }
 
