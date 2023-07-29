@@ -7,30 +7,20 @@
  *
  * Returns a pointer to the resulting string dest
  */
-char *_strcat(char *dest, char *src) {
-  char *ret;
-  int dest_len;
+int main(void) {
+  char s1[98] = "Hello ";
+  char s2[] = "World!\n";
+  char *ptr;
 
-  /* Check for NULL pointers */
-  if (dest == NULL || src == NULL) {
-    return NULL;
-  }
+  /* Print the original strings */
+  printf("s1: %s\n", s1);
+  printf("s2: %s\n", s2);
 
-  /* Get the length of the destination string */
-  dest_len = strlen(dest);
+  /* Concatenate the strings */
+  ptr = _strcat(s1, s2);
 
-  /* Point ret to the end of the destination string */
-  ret = dest + dest_len;
+  /* Print the concatenated string */
+  printf("ptr: %s\n", ptr);
 
-  /* Copy the source string to the end of the destination string */
-  while (*src != '\0') {
-    *ret = *src;
-    ret++;
-    src++;
-  }
-
-  /* Add a terminating null byte to the end of the destination string */
-  *ret = '\0';
-
-  return dest;
+  return 0;
 }
