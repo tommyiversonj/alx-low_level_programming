@@ -8,21 +8,16 @@
  *
  * Returns a pointer to the resulting string dest
  */
-int main(void) 
-{
-  char s1[98] = "Hello ";
-  char s2[] = "World!\n";
-  char *ptr;
+char *_strncat(char *dest, char *src, int n) {
+  int i;
 
-  /* Print the original strings */
-  printf("s1: %s\n", s1);
-  printf("s2: %s\n", s2);
+  for (i = 0; i < n && src[i] != '\0'; i++) {
+    dest[i] = src[i];
+  }
 
-  /* Concatenate the strings */
-  ptr = _strcat(s1, s2);
+  if (i < n) {
+    dest[i] = '\0';
+  }
 
-  /* Print the concatenated string */
-  printf("ptr: %s\n", ptr);
-
-  return 0;
+  return dest;
 }
