@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-
 /**
  * concatenate_by_section - Concatenate a section of a string to another string.
  * @dest: The destination string.
