@@ -1,32 +1,36 @@
 #include <stdio.h>
 #include <string.h>
-/**
- * concatenate_by_section - Concatenate a section of a string to another string.
- * @dest: The destination string.
- * @src: The source string.
- * @src_start: The starting index of the section in the source string.
- * @src_end: The ending index (exclusive) of the section in the source string.
+/*
+ * _strcat - concatenates two strings
+ * @dest: the destination string
+ * @src: the source string
  *
- * Return: A pointer to the resulting destination string.
+ * Returns a pointer to the resulting string dest
  */
-char *concatenate_by_section(char *dest, char *src, int src_start, int src_end)
-{
-    // Find the end of the destination string
-    char *ptr = dest;
-    while (*ptr != '\0')
-    {
-        ptr++;
-    }
+char *_strcat(char *dest, char *src) {
+  char *ret;
+  int dest_len;
 
-    // Append the section of the source string to the destination string
-    int i;
-    for (i = src_start; i < src_end && src[i] != '\0'; i++)
-    {
-        *ptr++ = src[i];
-    }
+  /* Check for NULL pointers */
+  if (dest == NULL || src == NULL) {
+    return NULL;
+  }
 
-    // Add a terminating null byte
-    *ptr = '\0';
+  /* Get the length of the destination string */
+  dest_len = strlen(dest);
 
-    return dest;
+  /* Point ret to the end of the destination string */
+  ret = dest + dest_len;
+
+  /* Copy the source string to the end of the destination string */
+  while (*src != '\0') {
+    *ret = *src;
+    ret++;
+    src++;
+  }
+
+  /* Add a terminating null byte to the end of the destination string */
+  *ret = '\0';
+
+  return dest;
 }
