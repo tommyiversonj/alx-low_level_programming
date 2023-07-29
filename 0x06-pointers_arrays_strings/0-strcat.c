@@ -8,16 +8,20 @@
  *
  * Returns a pointer to the resulting string dest
  */
-char *_strncat(char *dest, char *src, int n) {
-  int i;
+char *_strcat(char *dest, char *src) {
+  int dest_len = strlen(dest);
+  int src_len = strlen(src);
 
-  for (i = 0; i < n && src[i] != '\0'; i++) {
-    dest[i] = src[i];
+  /* Move the pointer to the end of dest. */
+  dest += dest_len;
+
+  /* Copy the src string to dest. */
+  for (int i = 0; i < src_len; i++) {
+    *dest++ = *src++;
   }
 
-  if (i < n) {
-    dest[i] = '\0';
-  }
+  /* Add a terminating null byte. */
+  *dest = '\0';
 
   return dest;
 }
